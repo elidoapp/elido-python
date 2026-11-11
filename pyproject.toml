@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "elido-sdk"
+version = "0.1.0"
+description = "Python SDK for the Elido URL shortener API."
+authors = [{ name = "Elido", email = "engineering@elido.app" }]
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["url-shortener", "elido", "links", "qr", "analytics"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+  "httpx>=0.26",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "pytest-httpx>=0.30",
+]
+
+[project.urls]
+Homepage = "https://elido.app/docs"
+Documentation = "https://elido.app/docs"
+Repository = "https://github.com/elidoapp/elido-python"
+Issues = "https://github.com/elidoapp/elido-python/issues"
+Changelog = "https://github.com/elidoapp/elido-python/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+include = ["elido*"]
+
+[tool.setuptools.package-data]
+elido = ["py.typed"]
